@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 import Tooltip from 'rc-tooltip';
 import Handle from './Handle';
@@ -58,6 +59,7 @@ export default function createSliderWithTooltip(Component) {
           overlay={overlay}
           placement={placement}
           visible={(!disabled && (this.state.visibles[index] || dragging)) || visible}
+          getTooltipContainer={() => ReactDOM.findDOMNode(this.myRef)}
           key={index}
         >
 
@@ -67,6 +69,7 @@ export default function createSliderWithTooltip(Component) {
               ...handleStyleWithIndex,
             }}
             value={value}
+            ref={(e) => this.myRef = e}
             onMouseEnter={() => this.handleTooltipVisibleChange(index, true)}
             onMouseLeave={() => this.handleTooltipVisibleChange(index, false)}
           />
