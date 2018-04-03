@@ -10,7 +10,7 @@ export default function createSliderWithTooltip(Component) {
       tipFormatter: PropTypes.func,
       handleStyle: PropTypes.oneOfType([PropTypes.object, PropTypes.arrayOf(PropTypes.object)]),
       tipProps: PropTypes.object,
-      keepTooltip: PropTypes.boolean,
+      keepTooltip: PropTypes.bool,
     };
     static defaultProps = {
       tipFormatter(value) { return value; },
