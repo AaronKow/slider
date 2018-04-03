@@ -86,6 +86,7 @@ After Range or Slider was wrapped by createSliderWithTooltip, it will have the f
 | ------------ | ------- | ------- | ----------- |
 | tipFormatter | (value: number): React.ReactNode | `value => value` | A function to format tooltip's overlay |
 | tipProps | Object | `{` <br>`placement: 'top',` <br> ` prefixCls: 'rc-slider-tooltip',` <br> `overlay: tipFormatter(value)` <br> `}` | A function to format tooltip's overlay |
+| keepTooltip | boolean | false | Set whether the tooltip should visible all the time |
 
 ### Common API
 

@@ -35,6 +35,7 @@ export default function createSliderWithTooltip(Component) {
         tipFormatter,
         tipProps,
         handleStyle,
+        keepTooltip=false
       } = this.props;
 
       const {
@@ -58,7 +59,7 @@ export default function createSliderWithTooltip(Component) {
           prefixCls={prefixCls}
           overlay={overlay}
           placement={placement}
-          visible={(!disabled && (this.state.visibles[index] || dragging)) || visible}
+          visible={!!keepTooltip ? true : ((!disabled && (this.state.visibles[index] || dragging)) || visible)}
           getTooltipContainer={() => ReactDOM.findDOMNode(this.myRef)}
           key={index}
         >
